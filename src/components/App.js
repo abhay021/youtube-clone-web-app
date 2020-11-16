@@ -4,12 +4,12 @@ import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
 
-const KEY = "";
+const KEY = "AIzaSyB8i6N9DH7WYbjdZoc6qeRF-avsxax_lyI";
 class App extends React.Component {
 	state = { videos: [], selectedVideo: null };
 
 	componentDidMount() {
-		this.onFormSubmitClick("The Chainsmokers");
+		this.onFormSubmitClick("cars");
 	}
 
 	onFormSubmitClick = async term => {
@@ -22,7 +22,8 @@ class App extends React.Component {
 				key: KEY,
 			},
 		});
-		console.log(response.data.items);
+		console.log(response);
+		//console.log(response.data.items);
 		this.setState({
 			videos: response.data.items,
 			selectedVideo: response.data.items[0],
